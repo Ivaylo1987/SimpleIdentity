@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationUsers>
+  <User UserName="ani" Password="1234" />
+  <User UserName="petko" Password="123456" />
+  <User UserName="ivo" Password="1234" />
+  <User UserName="TestUser1" Password="123456" />
+  <User UserName="TestUser2" Password="654321" />
+</ApplicationUsers>

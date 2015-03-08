@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Identity</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Simple Identity", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+                @Html.ActionLink("Sign up", "SignUp", "Account", new { area = "" }, new { @class = "navbar-brand pull-right" })
+                @Html.ActionLink("Login", "Login", "Account", new { area = "" }, new { @class = "navbar-brand pull-right" })
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" id="bodyWrapper">
+        @RenderBody()
+        <div id="errorMessageContainer" class="row"><p id="errorMessage" class="text-danger text-center"></p></div>
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year Simple Identity</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

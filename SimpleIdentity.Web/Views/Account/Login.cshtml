@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Action = "Login";
+    ViewBag.Controller = "Account";
+    ViewBag.FormTitle = "Login";
+    
+    @Html.Partial("LoginSignUpPartial");
+    
+    @Html.ActionLink("Go to Sign up >>", "SignUp", "Account", new { area = "" }, new { @class = "btn btn-default" });
+}
+
+@section scripts{
+    <script src="~/Scripts/utilities.js"></script>
+}

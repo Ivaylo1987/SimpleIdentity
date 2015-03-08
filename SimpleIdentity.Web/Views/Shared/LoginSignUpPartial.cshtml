@@ -1,0 +1,26 @@
+﻿@using SimpleIdentity.Web.ViewModels
+@model UserViewModel
+
+@{
+    string action = ViewBag.Action;
+    string controller = ViewBag.Controller;
+    string formTitle = ViewBag.FormTitle;
+}
+
+<div class="row">
+    <div class="col-md-10">
+
+        <h3>@formTitle</h3>
+        <p>Please enter your username and passwrod</p>
+
+        @using (Html.BeginForm(action, controller, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "loginSignUpForm" }))
+        {
+            @Html.AntiForgeryToken();
+
+            @Html.FormGroupFor(m => m.UserName, true);
+            @Html.FormGroupFor(m => m.Password, true);
+            @Html.SubmitButton(@formTitle, new { id = "loginSignUpBtn" });
+        }
+
+    </div>
+</div>
